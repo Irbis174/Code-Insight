@@ -7,8 +7,3 @@ def bubble_sort(list1):
                 list1[j], list1[j + 1] = list1[j + 1], list1[j]
     return list1
 
-
-list1 = [5, 3, 8, 6, 7, 2]
-print("The unsorted list is: ", list1)
-# Calling the bubble sort function
-print("The sorted list is: ", bubble_sort(list1))
