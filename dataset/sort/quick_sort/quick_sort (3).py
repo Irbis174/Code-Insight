@@ -1,4 +1,4 @@
-def quicksort(arr):
+def quick_sort(arr):
     if len(arr) <= 1:
         return arr
     pivot = arr[0]
@@ -14,4 +14,4 @@ def quicksort(arr):
         else:
             break
     arr[0], arr[j] = arr[j], arr[0]
-    return quicksort(arr[:j]) + [arr[j]] + quicksort(arr[j + 1:])
+    return quick_sort(arr[:j]) + [arr[j]] + quick_sort(arr[j + 1:])

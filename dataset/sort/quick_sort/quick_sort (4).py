@@ -1,4 +1,4 @@
-def quicksort(arr):
+def quick_sort(arr):
     if len(arr) <= 1:
         return arr
     stack = [(0, len(arr) - 1)]

@@ -1,4 +1,4 @@
-def quicksort(arr):
+def quick_sort(arr):
     if len(arr) <= 1:
         return arr
     pivot = arr[len(arr) // 2]
@@ -12,4 +12,4 @@ def quicksort(arr):
             equal.append(num)
         else:
             more.append(num)
-    return quicksort(less) + equal + quicksort(more)
+    return quick_sort(less) + equal + quick_sort(more)
