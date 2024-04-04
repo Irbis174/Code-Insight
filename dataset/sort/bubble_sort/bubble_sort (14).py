@@ -1,4 +1,4 @@
-def bubble_sort_limit_passes(arr, max_passes):
+def bubble_sort(arr, max_passes):
     n = len(arr)
     for i in range(min(max_passes, n-1)):
         for j in range(n-i-1):

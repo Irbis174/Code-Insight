@@ -1,5 +1,5 @@
-def bubble(a,N):
+def bubble_sort(arr,N):
     for i in range(N - 1):
         for j in range(N - i - 1):
-            if a[j] > a[j + 1]:
-                a[j], a[j + 1] = a[j + 1], a[j]
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]

@@ -1,7 +1,7 @@
-def bubble_sort(array):
-    size = len(array)
-    for i in range(size - 1):
-        for j in range(size - 1):
-            if array[j] > array[j + 1]:
-                array[j], array[j + 1] = array[j + 1], array[j]
-    return array
+def bubble_sort(arr):
+    N = len(arr)
+    for i in range(N - 1):
+        for j in range(N - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr

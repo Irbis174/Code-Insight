@@ -1,9 +1,9 @@
-def bubble_sort(list1):
+def bubble_sort(arr):
     has_swapped = True
     while (has_swapped):
         has_swapped = False
-        for i in range(len(list1) - 1):
-            if list1[i] > list1[i + 1]:
-                list1[i], list1[i + 1] = list1[i + 1], list1[i]
+        for i in range(len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
                 has_swapped = True
-    return list1
+    return arr

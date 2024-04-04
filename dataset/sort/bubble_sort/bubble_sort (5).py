@@ -1,9 +1,9 @@
-def bubble_sort(list1):
-    for i in range(0, len(list1) - 1):
-        for j in range(len(list1) - 1):
-            if (list1[j] > list1[j + 1]):
-                temp = list1[j]
-                list1[j] = list1[j + 1]
-                list1[j + 1] = temp
-    return list1
+def bubble_sort(arr):
+    for i in range(0, len(arr) - 1):
+        for j in range(len(arr) - 1):
+            if (arr[j] > arr[j + 1]):
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+    return arr
 
