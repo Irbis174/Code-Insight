@@ -10,6 +10,5 @@ def bubble_sort(arr):
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
                 has_swapped = True
         total_iteration += 1
-    print("The number of iteraton: ", total_iteration)
     return arr
 
