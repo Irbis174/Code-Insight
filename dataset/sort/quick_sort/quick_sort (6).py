@@ -13,4 +13,4 @@ def quick_sort(arr):
             arr[i], arr[j] = arr[j], arr[i]
             i += 1
             j -= 1
-    return quick_sort_hoare(arr[:i]) + quick_sort_hoare(arr[i:])
+    return quick_sort(arr[:i]) + quick_sort(arr[i:])
