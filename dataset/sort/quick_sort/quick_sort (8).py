@@ -1,11 +1,8 @@
-def quick_sort(arr, ascending=True):
+def randomized_quicksort(arr):
     if len(arr) <= 1:
         return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    if ascending:
-        return quick_sort(left, ascending) + middle + quick_sort(right, ascending)
-    else:
-        return quick_sort(right, ascending) + middle + quick_sort(left, ascending)
+    pivot = random.choice(arr)
+    l = [x for x in arr if x < pivot]
+    m = [x for x in arr if x == pivot]
+    r = [x for x in arr if x > pivot]
+    return randomized_quicksort(l) + m + randomized_quicksort(r)

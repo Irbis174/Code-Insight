@@ -1,11 +1,14 @@
-def quick_sort(arr, ascending=True):
+import heapq
+
+def introsort(arr, max_depth=None):
     if len(arr) <= 1:
         return arr
+    if max_depth is None:
+        max_depth = 2 * (len(arr)).bit_length()
+    if max_depth == 0:
+        return heapq.nlargest(len(arr), arr)
     pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    if ascending:
-        return quick_sort(left, ascending) + middle + quick_sort(right, ascending)
-    else:
-        return quick_sort(right, ascending) + middle + quick_sort(left, ascending)
+    l = [x for x in arr if x < pivot]
+    m = [x for x in arr if x == pivot]
+    r = [x for x in arr if x > pivot]
+    return introsort(l, max_depth - 1) + m + introsort(r, max_depth - 1)

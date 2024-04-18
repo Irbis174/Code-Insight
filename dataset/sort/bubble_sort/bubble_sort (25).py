@@ -1,11 +1,12 @@
-def bubble_sort(arr):
-    n = len(arr)
-    boundary = n-1
-    while boundary > 0:
-        new_boundary = 0
-        for i in range(boundary):
-            if arr[i] > arr[i+1]:
-                arr[i], arr[i+1] = arr[i+1], arr[i]
-                new_boundary = i
-        boundary = new_boundary
+def SinglePassBubbleSort(arr):
+    length = len(arr)
+    while True:
+        swapped = False
+        for i in range(1, length):
+            if arr[i - 1] > arr[i]:
+                arr[i - 1], arr[i] = arr[i], arr[i - 1]
+                swapped = True
+        if not swapped:
+            break
+        length -= 1
     return arr

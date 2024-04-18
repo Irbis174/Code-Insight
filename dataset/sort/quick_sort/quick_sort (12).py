@@ -1,19 +1,14 @@
-def quick_sort(arr):
-    stack = [(0, len(arr) - 1)]
-    while stack:
-        low, high = stack.pop()
-        if low < high:
-            pivot_index = partition(arr, low, high)
-            stack.append((low, pivot_index - 1))
-            stack.append((pivot_index + 1, high))
-    return arr
+import heapq
 
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1
-    for j in range(low, high):
-        if arr[j] < pivot:
-            i += 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+def introsort(arr, max_depth=None):
+    if len(arr) <= 1:
+        return arr
+    if max_depth is None:
+        max_depth = 2 * (len(arr)).bit_length()
+    if max_depth == 0:
+        return heapq.nlargest(len(arr), arr)
+    pivot = arr[len(arr) // 2]
+    l = [x for x in arr if x < pivot]
+    m = [x for x in arr if x == pivot]
+    r = [x for x in arr if x > pivot]
+    return introsort(l, max_depth - 1) + m + introsort(r, max_depth - 1)
