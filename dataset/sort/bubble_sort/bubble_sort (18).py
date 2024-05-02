@@ -1,7 +1,12 @@
-def CustomComparisonBubbleSort(arr, comparator):
-    length = len(arr)
+def bubble_sort(lst):
+    length = len(lst)
+    
+    def swap(i, j):
+        lst[i], lst[j] = lst[j], lst[i]
+        
     for i in range(length):
-        for j in range(0, length-i-1):
-            if comparator(arr[j], arr[j+1]):
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
+        for j in range(length - i - 1):
+            if lst[j] > lst[j + 1]:
+                swap(j, j + 1)
+                
+    return lst

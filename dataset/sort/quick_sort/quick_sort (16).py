@@ -1,9 +1,24 @@
-def hybrid_quicksort(arr):
-    if len(arr) <= 10:
-        return sorted(arr)  # Switch to Insertion Sort for small arrays
-    else:
-        pivot = arr[len(arr) // 2]
-        l = [x for x in arr if x < pivot]
-        m = [x for x in arr if x == pivot]
-        r = [x for x in arr if x > pivot]
-        return hybrid_quicksort(l) + m + hybrid_quicksort(r)
+from collections import deque
+
+def qs(arr):
+    if not arr:
+        return []
+    q = deque([(0, len(arr))])
+    while q:
+        s, e = q.popleft()
+        if s >= e:
+            continue
+        p_idx = prt(arr, s, e)
+        q.append((s, p_idx))
+        q.append((p_idx + 1, e))
+    return arr
+
+def prt(arr, s, e):
+    p = arr[e - 1]
+    i = s
+    for j in range(s, e - 1):
+        if arr[j] < p:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+    arr[i], arr[e - 1] = arr[e - 1], arr[i]
+    return i

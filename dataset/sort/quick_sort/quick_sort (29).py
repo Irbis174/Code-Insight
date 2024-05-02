@@ -1,16 +1,8 @@
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    i = 0
-    j = len(arr) - 1
-    while i <= j:
-        while arr[i] < pivot:
-            i += 1
-        while arr[j] > pivot:
-            j -= 1
-        if i <= j:
-            arr[i], arr[j] = arr[j], arr[i]
-            i += 1
-            j -= 1
-    return quick_sort(arr[:i]) + quick_sort(arr[i:])
+def quicksort(nums):
+    if len(nums) <= 1:
+        return nums
+    else:
+        pivot_num = nums[0]
+        smaller_nums = [x for x in nums[1:] if x < pivot_num]
+        larger_nums = [x for x in nums[1:] if x >= pivot_num]
+        return quicksort(smaller_nums) + [pivot_num] + quicksort(larger_nums)

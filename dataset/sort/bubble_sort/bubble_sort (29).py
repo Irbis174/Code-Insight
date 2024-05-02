@@ -1,11 +1,13 @@
-def OptimizedBubbleSort(arr):
-    length = len(arr)
-    swapped = True
-    while swapped:
+def bubble_sort(sequence):
+    length = len(sequence)
+    
+    for outer_idx in range(length):
         swapped = False
-        for i in range(1, length):
-            if arr[i - 1] > arr[i]:
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
+        for inner_idx in range(length - outer_idx - 1):
+            if sequence[inner_idx] > sequence[inner_idx + 1]:
+                sequence[inner_idx], sequence[inner_idx + 1] = sequence[inner_idx + 1], sequence[inner_idx]
                 swapped = True
-        length -= 1
-    return arr
+        if not swapped:
+            break
+            
+    return sequence

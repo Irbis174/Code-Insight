@@ -1,8 +1,7 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
-
+def bubble_sort(container):
+    cont_len = len(container)
+    swap = lambda i, j: (container[j], container[i]) if container[i] > container[j] else (container[i], container[j])
+    for outer_idx in range(cont_len):
+        for inner_idx in range(cont_len - outer_idx - 1):
+            container[inner_idx], container[inner_idx + 1] = swap(inner_idx, inner_idx + 1)
+    return container

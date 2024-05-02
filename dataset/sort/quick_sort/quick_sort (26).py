@@ -1,24 +1,17 @@
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    stack = [(0, len(arr) - 1)]
+from collections import deque
+
+def quicksort(array):
+    stack = deque([(0, len(array) - 1)])
     while stack:
-        start, end = stack.pop()
-        if start >= end:
+        start_index, end_index = stack.pop()
+        if start_index >= end_index:
             continue
-        pivot = arr[start]
-        i = start + 1
-        j = end
-        while True:
-            while i <= j and arr[i] <= pivot:
-                i += 1
-            while i <= j and arr[j] >= pivot:
-                j -= 1
-            if i <= j:
-                arr[i], arr[j] = arr[j], arr[i]
-            else:
-                break
-        arr[start], arr[j] = arr[j], arr[start]
-        stack.append((start, j - 1))
-        stack.append((j + 1, end))
-    return arr
+        pivot = array[end_index]
+        pivot_index = start_index - 1
+        for j in range(start_index, end_index):
+            if array[j] <= pivot:
+                pivot_index += 1
+                array[pivot_index], array[j] = array[j], array[pivot_index]
+        array[pivot_index + 1], array[end_index] = array[end_index], array[pivot_index + 1]
+        stack.append((start_index, pivot_index - 1))
+        stack.append((pivot_index + 2, end_index))

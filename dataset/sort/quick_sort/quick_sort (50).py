@@ -1,17 +1,21 @@
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[0]
-    i = 1
-    j = len(arr) - 1
-    while True:
-        while i <= j and arr[i] <= pivot:
-            i += 1
-        while i <= j and arr[j] >= pivot:
-            j -= 1
-        if i <= j:
-            arr[i], arr[j] = arr[j], arr[i]
-        else:
-            break
-    arr[0], arr[j] = arr[j], arr[0]
-    return quick_sort(arr[:j]) + [arr[j]] + quick_sort(arr[j + 1:])
+import random
+
+def partition(unsorted_list, left_index, right_index):
+    pivot_index = random.randint(left_index, right_index)
+    pivot_value = unsorted_list[pivot_index]
+    unsorted_list[pivot_index], unsorted_list[right_index] = unsorted_list[right_index], unsorted_list[pivot_index]
+    store_index = left_index
+    for i in range(left_index, right_index):
+        if unsorted_list[i] < pivot_value:
+            unsorted_list[i], unsorted_list[store_index] = unsorted_list[store_index], unsorted_list[i]
+            store_index += 1
+    unsorted_list[right_index], unsorted_list[store_index] = unsorted_list[store_index], unsorted_list[right_index]
+    return store_index
+
+def quicksort(unsorted_list, left_index=0, right_index=None):
+    if right_index is None:
+        right_index = len(unsorted_list) - 1
+    if left_index < right_index:
+        pivot_index = partition(unsorted_list, left_index, right_index)
+        quicksort(unsorted_list, left_index, pivot_index - 1)
+        quicksort(unsorted_list, pivot_index + 1, right_index)

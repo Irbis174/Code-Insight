@@ -1,14 +1,5 @@
-def bubble_sort_bidirectional(arr):
-    n = len(arr)
-    left = 0
-    right = n - 1
-    while left < right:
-        for i in range(left, right):
-            if arr[i] > arr[i + 1]:
-                arr[i], arr[i + 1] = arr[i + 1], arr[i]
-        right -= 1
-        for i in range(right, left, -1):
-            if arr[i - 1] > arr[i]:
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
-        left += 1
-    return arr
+def bubble_sort(sequence):
+    seq_len = len(sequence)
+    for i in range(seq_len):
+        sequence = list(map(lambda x, y: (y, x) if x > y else (x, y), sequence[:seq_len-i], sequence[1:seq_len-i+1]))
+    return sequence

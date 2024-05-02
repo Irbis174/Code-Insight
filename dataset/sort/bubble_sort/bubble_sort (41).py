@@ -1,11 +1,9 @@
-def bubble_sort_optimized(arr)
-    n = len(arr)
-    swapped = True
-    while swapped
-        swapped = False
-        for i in range(1, n)
-            if arr[i - 1]  arr[i]
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
-                swapped = True
-        n -= 1
-    return arr
+def bubble_sort(collection):
+    coll_len = len(collection)
+    for outer_idx in range(coll_len):
+        for inner_idx in range(0, coll_len - outer_idx - 1):
+            if collection[inner_idx] > collection[inner_idx + 1]:
+                temp_val = collection[inner_idx]
+                collection[inner_idx] = collection[inner_idx + 1]
+                collection[inner_idx + 1] = temp_val
+    return collection

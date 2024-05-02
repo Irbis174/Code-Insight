@@ -1,19 +1,17 @@
-def quick_sort(arr):
-    stack = [(0, len(arr) - 1)]
-    while stack:
-        low, high = stack.pop()
-        if low < high:
-            pivot_index = partition(arr, low, high)
-            stack.append((low, pivot_index - 1))
-            stack.append((pivot_index + 1, high))
-    return arr
+def partition(unsorted_list, left_index, right_index):
+    pivot_value = unsorted_list[right_index]
+    pivot_index = left_index - 1
+    for j in range(left_index, right_index):
+        if unsorted_list[j] <= pivot_value:
+            pivot_index += 1
+            unsorted_list[pivot_index], unsorted_list[j] = unsorted_list[j], unsorted_list[pivot_index]
+    unsorted_list[pivot_index + 1], unsorted_list[right_index] = unsorted_list[right_index], unsorted_list[pivot_index + 1]
+    return pivot_index + 1
 
-def partition(arr, low, high):
-    pivot = arr[high]
-    i = low - 1
-    for j in range(low, high):
-        if arr[j] < pivot:
-            i += 1
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[i + 1], arr[high] = arr[high], arr[i + 1]
-    return i + 1
+def quicksort(unsorted_list, left_index=0, right_index=None):
+    if right_index is None:
+        right_index = len(unsorted_list) - 1
+    if left_index < right_index:
+        pivot_position = partition(unsorted_list, left_index, right_index)
+        quicksort(unsorted_list, left_index, pivot_position - 1)
+        quicksort(unsorted_list, pivot_position + 1, right_index)

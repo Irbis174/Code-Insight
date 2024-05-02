@@ -1,11 +1,13 @@
-def bubble_sort_last_swap(arr)
-    n = len(arr)
-    newn = 0
-    while n  0
-        newn = 0
-        for i in range(1, n)
-            if arr[i - 1]  arr[i]
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
-                newn = i
-        n = newn
-    return arr
+import numpy as np
+
+def bubble_sort(array):
+    arr = np.array(array)
+    is_sorted = False
+    while not is_sorted:
+        swapped = False
+        for i in range(arr.size - 1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swapped = True
+        is_sorted = not swapped
+    return arr.tolist()

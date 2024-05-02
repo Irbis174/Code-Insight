@@ -1,10 +1,20 @@
-import random
 
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = random.choice(arr)
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort_random_pivot(left) + middle + quick_sort_random_pivot(right)
+def partition(unsorted_list, left_index, right_index):
+    pivot_index = random.randrange(left_index, right_index + 1)
+    pivot_value = unsorted_list[pivot_index]
+    unsorted_list[pivot_index], unsorted_list[right_index] = unsorted_list[right_index], unsorted_list[pivot_index]
+    pivot_index = left_index
+    for j in range(left_index, right_index):
+        if unsorted_list[j] <= pivot_value:
+            unsorted_list[pivot_index], unsorted_list[j] = unsorted_list[j], unsorted_list[pivot_index]
+            pivot_index += 1
+    unsorted_list[pivot_index], unsorted_list[right_index] = unsorted_list[right_index], unsorted_list[pivot_index]
+    return pivot_index
+
+def quicksort(unsorted_list, left_index=0, right_index=None):
+    if right_index is None:
+        right_index = len(unsorted_list) - 1
+    if left_index < right_index:
+        pivot_position = partition(unsorted_list, left_index, right_index)
+        quicksort(unsorted_list, left_index, pivot_position - 1)
+        quicksort(unsorted_list, pivot_position + 1, right_index)

@@ -1,11 +1,7 @@
-def bubble_sort_last_swap(arr)
-    n = len(arr)
-    newn = 0
-    while n  0
-        newn = 0
-        for i in range(1, n)
-            if arr[i - 1]  arr[i]
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
-                newn = i
-        n = newn
-    return arr
+def bubble_sort(sequence):
+    length = len(sequence)
+    for outer_idx in range(length):
+        for inner_idx in range(0, length - outer_idx - 1):
+            if sequence[inner_idx] > sequence[inner_idx + 1]:
+                sequence[inner_idx], sequence[inner_idx + 1] = sequence[inner_idx + 1], sequence[inner_idx]
+    return sequence

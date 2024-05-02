@@ -1,6 +1,12 @@
-def BubbleSortWithRange(arr, start, end):
-    for i in range(start, end):
-        for j in range(start, end-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
+def bubble_sort(sequence):
+    length = len(sequence)
+    swapped = True
+    
+    while swapped:
+        swapped = False
+        for idx in range(length - 1):
+            if sequence[idx] > sequence[idx + 1]:
+                sequence[idx], sequence[idx + 1] = sequence[idx + 1], sequence[idx]
+                swapped = True
+                
+    return sequence

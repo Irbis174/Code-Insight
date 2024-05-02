@@ -1,8 +1,3 @@
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + middle + quick_sort(right)
+quicksort = lambda nums: quicksort([x for x in nums[1:] if x < nums[0]]) + \
+                         [nums[0]] + \
+                         quicksort([x for x in nums[1:] if x >= nums[0]]) if nums else []

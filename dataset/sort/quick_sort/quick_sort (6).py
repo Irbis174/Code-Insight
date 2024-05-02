@@ -1,14 +1,25 @@
-import heapq
-
-def introsort(arr, max_depth=None):
+def quicksort(arr):
     if len(arr) <= 1:
         return arr
-    if max_depth is None:
-        max_depth = 2 * (len(arr)).bit_length()
-    if max_depth == 0:
-        return heapq.nlargest(len(arr), arr)
-    pivot = arr[len(arr) // 2]
-    l = [x for x in arr if x < pivot]
-    m = [x for x in arr if x == pivot]
-    r = [x for x in arr if x > pivot]
-    return introsort(l, max_depth - 1) + m + introsort(r, max_depth - 1)
+    smaller, equal, larger = partition(arr)
+    return quicksort(smaller) + equal + quicksort(larger)
+
+def partition(arr):
+    pivot = arr[0]
+    left, right = 1, len(arr) - 1
+    while left <= right:
+        while left <= right and arr[left] < pivot:
+            left += 1
+        while left <= right and arr[right] >= pivot:
+            right -= 1
+        if left <= right:
+            arr[left], arr[right] = arr[right], arr[left]
+            left += 1
+            right -= 1
+    for i in range(right + 1):
+        if arr[i] >= pivot:
+            arr[i], arr[right] = arr[right], arr[i]
+            break
+    smaller = arr[:right]
+    equal = [arr[right]] * (left - right - 1)
+    larger = arr[left:]

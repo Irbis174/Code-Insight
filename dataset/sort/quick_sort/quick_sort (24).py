@@ -1,17 +1,13 @@
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[0]
-    i = 1
-    j = len(arr) - 1
-    while True:
-        while i <= j and arr[i] <= pivot:
-            i += 1
-        while i <= j and arr[j] >= pivot:
-            j -= 1
-        if i <= j:
-            arr[i], arr[j] = arr[j], arr[i]
-        else:
-            break
-    arr[0], arr[j] = arr[j], arr[0]
-    return quick_sort(arr[:j]) + [arr[j]] + quick_sort(arr[j + 1:])
+import random
+
+def partition(array, start_index, end_index):
+    pivot_index = random.randrange(start_index, end_index + 1)
+    pivot = array[pivot_index]
+    array[pivot_index], array[end_index] = array[end_index], array[pivot_index]
+    pivot_index = start_index
+    for j in range(start_index, end_index):
+        if array[j] <= pivot:
+            array[pivot_index], array[j] = array[j], array[pivot_index]
+            pivot_index += 1
+    array[pivot_index], array[end_index] = array[end_index], array[pivot_index]
+    return pivot_index

@@ -1,11 +1,21 @@
-def quick_sort(arr, ascending=True):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    if ascending:
-        return quick_sort(left, ascending) + middle + quick_sort(right, ascending)
-    else:
-        return quick_sort(right, ascending) + middle + quick_sort(left, ascending)
+import random
+
+def partition(nums, left, right):
+    pivot_index = random.randrange(left, right + 1)
+    pivot_value = nums[pivot_index]
+    nums[pivot_index], nums[right] = nums[right], nums[pivot_index]
+    pivot_index = left
+    for j in range(left, right):
+        if nums[j] <= pivot_value:
+            nums[pivot_index], nums[j] = nums[j], nums[pivot_index]
+            pivot_index += 1
+    nums[pivot_index], nums[right] = nums[right], nums[pivot_index]
+    return pivot_index
+
+def quicksort(nums, left_index=0, right_index=None):
+    if right_index is None:
+        right_index = len(nums) - 1
+    if left_index < right_index:
+        pivot_position = partition(nums, left_index, right_index)
+        quicksort(nums, left_index, pivot_position - 1)
+        quicksort(nums, pivot_position + 1, right_index)

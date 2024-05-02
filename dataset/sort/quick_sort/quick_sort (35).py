@@ -1,8 +1,17 @@
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + middle + quick_sort(right)
+from collections import deque
+
+def quicksort(nums):
+    stack = deque([(0, len(nums) - 1)])
+    while stack:
+        left_index, right_index = stack.pop()
+        if left_index >= right_index:
+            continue
+        pivot_value = nums[right_index]
+        pivot_index = left_index - 1
+        for j in range(left_index, right_index):
+            if nums[j] <= pivot_value:
+                pivot_index += 1
+                nums[pivot_index], nums[j] = nums[j], nums[pivot_index]
+        nums[pivot_index + 1], nums[right_index] = nums[right_index], nums[pivot_index + 1]
+        stack.append((left_index, pivot_index - 1))
+        stack.append((pivot_index + 2, right_index))

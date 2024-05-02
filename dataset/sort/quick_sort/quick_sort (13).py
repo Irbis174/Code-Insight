@@ -1,14 +1,11 @@
-import heapq
+import random
 
-def introsort(arr, max_depth=None):
+def qs(arr):
     if len(arr) <= 1:
         return arr
-    if max_depth is None:
-        max_depth = 2 * (len(arr)).bit_length()
-    if max_depth == 0:
-        return heapq.nlargest(len(arr), arr)
-    pivot = arr[len(arr) // 2]
-    l = [x for x in arr if x < pivot]
-    m = [x for x in arr if x == pivot]
-    r = [x for x in arr if x > pivot]
-    return introsort(l, max_depth - 1) + m + introsort(r, max_depth - 1)
+    p_idx = random.randrange(len(arr))
+    p = arr[p_idx]
+    l = [x for i, x in enumerate(arr) if x < p and i != p_idx]
+    m = [x for i, x in enumerate(arr) if x == p and i != p_idx]
+    r = [x for i, x in enumerate(arr) if x > p and i != p_idx]
+    return qs(l) + m + qs(r)

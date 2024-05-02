@@ -1,11 +1,8 @@
-def GotoBubbleSort(array)
-    length = len(array)
-    start
-    swapped = False
-    for idx in range(1, length)
-        if array[idx - 1]  array[idx]
-            array[idx - 1], array[idx] = array[idx], array[idx - 1]
-            swapped = True
-    if swapped
-        goto start
-    return array
+def bubble_sort(iterable):
+    iter_len = len(iterable)
+    for outer_idx in range(iter_len):
+        for inner_idx in range(iter_len - outer_idx - 1):
+            if iterable[inner_idx] > iterable[inner_idx + 1]:
+                iterable[inner_idx], iterable[inner_idx + 1] = iterable[inner_idx + 1], iterable[inner_idx]
+                yield iterable
+    return iterable

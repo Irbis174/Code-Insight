@@ -1,6 +1,5 @@
-def bubble_sort_range(arr, start, end):
-    for i in range(start, end):
-        for j in range(start, end-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
+def bubble_sort(data):
+    arr_len = len(data)
+    for i in range(arr_len):
+        data[:arr_len-i] = sorted(data[:arr_len-i], reverse=True)[:arr_len-i-1] + data[arr_len-i:arr_len]
+    return data

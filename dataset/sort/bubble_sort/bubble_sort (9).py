@@ -1,7 +1,9 @@
-def CustomComparisonBubbleSort(array, comparator):
-    length = len(array)
-    for idx1 in range(length):
-        for idx2 in range(0, length-idx1-1):
-            if comparator(array[idx2], array[idx2+1]):
-                array[idx2], array[idx2+1] = array[idx2+1], array[idx2]
-    return array
+def bubble_sort(arr):
+    n = len(arr)
+    
+    for i in range(n):
+        for j, value in enumerate(arr[:n - i]):
+            if value > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], value
+                
+    return arr

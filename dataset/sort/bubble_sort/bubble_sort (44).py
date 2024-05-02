@@ -1,8 +1,11 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-    return arr
-
+def bubble_sort(sequence):
+    seq_len = len(sequence)
+    def sort(idx):
+        if idx == seq_len:
+            return
+        for inner_idx in range(seq_len - idx - 1):
+            if sequence[inner_idx] > sequence[inner_idx + 1]:
+                sequence[inner_idx], sequence[inner_idx + 1] = sequence[inner_idx + 1], sequence[inner_idx]
+        sort(idx + 1)
+    sort(1)
+    return sequence

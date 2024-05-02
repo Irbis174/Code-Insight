@@ -1,12 +1,9 @@
-def bubble_sort_one_pass(arr):
-    n = len(arr)
-    while True:
-        swapped = False
-        for i in range(1, n):
-            if arr[i - 1] > arr[i]:
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
-                swapped = True
-        if not swapped:
-            break
-        n -= 1
-    return arr
+from itertools import tee
+
+def bubble_sort(iterable):
+    it1, it2 = tee(iterable)
+    next(it2, None)
+    sorted_iter = [y if x > y else x for x, y in zip(it1, it2)]
+    if sorted_iter == list(iterable):
+        return sorted_iter
+    return bubble_sort(sorted_iter)

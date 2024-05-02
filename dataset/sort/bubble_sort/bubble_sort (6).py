@@ -1,10 +1,15 @@
-def RecursiveBubbleSort(array, n=None):
-    if n is None:
-        n = len(array)
-    if n == 1:
-        return array
-    for idx in range(n - 1):
-        if array[idx] > array[idx + 1]:
-            array[idx], array[idx + 1] = array[idx + 1], array[idx]
-    RecursiveBubbleSort(array, n - 1)
-    return array
+def bubble_sort(arr):
+    n = len(arr)
+    
+    def sort(i):
+        if i == n:
+            return
+        
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        
+        sort(i + 1)
+        
+    sort(1)
+    return arr

@@ -1,11 +1,8 @@
-def quick_sort(arr, ascending=True):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    if ascending:
-        return quick_sort(left, ascending) + middle + quick_sort(right, ascending)
+def quicksort(unsorted_list):
+    if len(unsorted_list) <= 1:
+        return unsorted_list
     else:
-        return quick_sort(right, ascending) + middle + quick_sort(left, ascending)
+        pivot_value = unsorted_list[0]
+        left_sublist = [x for x in unsorted_list[1:] if x < pivot_value]
+        right_sublist = [x for x in unsorted_list[1:] if x >= pivot_value]
+        return quicksort(left_sublist) + [pivot_value] + quicksort(right_sublist)

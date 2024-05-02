@@ -1,12 +1,10 @@
-def SinglePassBubbleSort(arr):
-    length = len(arr)
-    while True:
-        swapped = False
-        for i in range(1, length):
-            if arr[i - 1] > arr[i]:
-                arr[i - 1], arr[i] = arr[i], arr[i - 1]
-                swapped = True
-        if not swapped:
-            break
-        length -= 1
-    return arr
+def bubble_sort(sequence):
+    length = len(sequence)
+    
+    for outer_idx in range(length):
+        for inner_idx in range(length - outer_idx - 1):
+            if sequence[inner_idx] > sequence[inner_idx + 1]:
+                sequence[inner_idx], sequence[inner_idx + 1] = sequence[inner_idx + 1], sequence[inner_idx]
+                yield sequence
+                
+    return sequence

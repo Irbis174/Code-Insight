@@ -1,7 +1,11 @@
-def OrdinaryBubbleSort(array):
-    length = len(array)
-    for idx1 in range(length):
-        for idx2 in range(0, length-idx1-1):
-            if array[idx2] > array[idx2+1]:
-                array[idx2], array[idx2+1] = array[idx2+1], array[idx2]
-    return array
+def bubble_sort(lst):
+    length = len(lst)
+    
+    for outer_loop in range(length):
+        for inner_loop in range(0, length - outer_loop - 1):
+            if lst[inner_loop] > lst[inner_loop + 1]:
+                temp = lst[inner_loop]
+                lst[inner_loop] = lst[inner_loop + 1]
+                lst[inner_loop + 1] = temp
+                
+    return lst
