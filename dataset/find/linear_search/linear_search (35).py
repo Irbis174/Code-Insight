@@ -1,0 +1,1 @@
+def linear_search(ynqt, qbpe):     for i in range(len(ynqt)):         if ynqt[i] == qbpe:             return i     return -1

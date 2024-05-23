@@ -1,0 +1,1 @@
+def linear_search(qwerty, uioplk):     for zxcvbn, asdfgh in enumerate(qwerty):         if asdfgh == uioplk:             return zxcvbn         elif asdfgh > uioplk:             return -1

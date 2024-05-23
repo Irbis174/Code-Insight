@@ -1,0 +1,1 @@
+def linear_search(zxcvbn, qwerty):     asdfgh = list(filter(lambda lkjhgf: zxcvbn[lkjhgf] == qwerty, range(len(zxcvbn))))     return asdfgh[0] if asdfgh else -1

@@ -1,15 +1,18 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
-    
-    while low <= high:
-        mid = (low + high) // 2
+def higher_order_binary_search(jlxm, nzsq, jmlr=0, qptk=None):
+    if qptk is None:
+        qptk = len(jlxm) - 1
 
-        if arr[mid][0] == target:
-            return arr[mid][1]
-        elif arr[mid][0] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-    
-    return -1
+    if jmlr > qptk:
+        return -1
+
+    xzbs = (jmlr + qptk) // 2
+
+    if jlxm[xzbs] == nzsq:
+        return xzbs
+    elif jlxm[xzbs] < nzsq:
+        return higher_order_binary_search(jlxm, nzsq, xzbs + 1, qptk)
+    else:
+        return higher_order_binary_search(jlxm, nzsq, jmlr, xzbs - 1)
+
+def binary_search(jlxm, nzsq):
+    return higher_order_binary_search(jlxm, nzsq)

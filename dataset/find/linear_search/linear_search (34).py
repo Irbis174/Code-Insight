@@ -1,0 +1,1 @@
+def linear_search(tyghb, njuik):     for vcxzl in enumerate(njuik):         if njuik[vcxzl[0]] == tyghb:             return vcxzl[0]     return -1

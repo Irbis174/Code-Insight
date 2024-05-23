@@ -1,0 +1,1 @@
+def linear_search(asnm, bqrw):     for xzpd in range(len(asnm)):         if asnm[xzpd] == bqrw:             return xzpd     return -1

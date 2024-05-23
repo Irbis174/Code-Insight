@@ -1,15 +1,18 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
+def higher_order_binary_search(vqpz, krnl, wgfj=0, xtby=None):
+    if xtby is None:
+        xtby = len(vqpz) - 1
 
-    while low <= high:
-        mid = (low + high) // 2
+    if wgfj > xtby:
+        return -1
 
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
+    nmzr = (wgfj + xtby) // 2
 
-    return -1
+    if vqpz[nmzr] == krnl:
+        return nmzr
+    elif vqpz[nmzr] < krnl:
+        return higher_order_binary_search(vqpz, krnl, nmzr + 1, xtby)
+    else:
+        return higher_order_binary_search(vqpz, krnl, wgfj, nmzr - 1)
+
+def binary_search(vqpz, krnl):
+    return higher_order_binary_search(vqpz, krnl)

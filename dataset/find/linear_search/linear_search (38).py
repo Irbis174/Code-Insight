@@ -1,0 +1,1 @@
+def linear_search(fghi, jklm):     for nopq in range(len(fghi)):         if fghi[nopq] == jklm:             return nopq     return -1

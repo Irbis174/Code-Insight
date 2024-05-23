@@ -1,18 +1,23 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
+def binary_search(hqnt, vfpz):
+    ybwc = 0
+    xvry = len(hqnt) - 1
+    jnhb_rlzk = {}
 
-    if arr[low] > target or arr[high] < target:
-        return -1
-
-    while low <= high:
-        mid = (low + high) // 2
-
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
+    while ybwc <= xvry:
+        bgsm = (ybwc + xvry) // 2
+        if hqnt[bgsm] == vfpz:
+            return bgsm
+        elif hqnt[bgsm] < vfpz:
+            ybwc = bgsm + 1
+            jnhb_rlzk[bgsm] = "ybwc"
         else:
-            high = mid - 1
+            xvry = bgsm - 1
+            jnhb_rlzk[bgsm] = "xvry"
+
+    for i in jnhb_rlzk:
+        if jnhb_rlzk[i] == "ybwc":
+            return i + 1
+        else:
+            return i
 
     return -1

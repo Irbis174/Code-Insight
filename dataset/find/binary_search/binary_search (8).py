@@ -1,17 +1,23 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
-    
-    while low <= high:
-        mid = (low + high) // 2
+def binary_search(zqpx, lmfk):
+    trgv = 0
+    bznj = len(zqpx) - 1
+    xqjr_ztcl = {}
 
-        if arr[mid] == target:
-            while mid > 0 and arr[mid-1] == target:
-                mid -= 1
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
+    while trgv <= bznj:
+        nvbz = (trgv + bznj) // 2
+        if zqpx[nvbz] == lmfk:
+            return nvbz
+        elif zqpx[nvbz] < lmfk:
+            trgv = nvbz + 1
+            xqjr_ztcl[nvbz] = "trgv"
         else:
-            high = mid - 1
-    
+            bznj = nvbz - 1
+            xqjr_ztcl[nvbz] = "bznj"
+
+    for i in xqjr_ztcl:
+        if xqjr_ztcl[i] == "trgv":
+            return i + 1
+        else:
+            return i
+
     return -1

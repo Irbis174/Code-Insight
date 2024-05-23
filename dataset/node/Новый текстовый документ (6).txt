@@ -1,0 +1,42 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    def is_palindrome(self):
+        slow = self.head
+        stack = []
+        is_palindrome = True
+
+        while slow:
+            stack.append(slow.data)
+            slow = slow.next
+
+        while self.head:
+            data = stack.pop()
+            if self.head.data != data:
+                is_palindrome = False
+                break
+            self.head = self.head.next
+
+        return is_palindrome
+
+    def print_list(self):
+        curr = self.head
+        while curr:
+            print(curr.data, end=" ")
+            curr = curr.next

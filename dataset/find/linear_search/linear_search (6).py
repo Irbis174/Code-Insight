@@ -1,0 +1,1 @@
+def linear_search(lst, target):     return [i for i, val in enumerate(lst) if val == target]

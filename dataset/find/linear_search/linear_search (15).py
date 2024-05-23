@@ -1,0 +1,1 @@
+def linear_search(lkjhgf, dsaqwe):     zxcvbn = 0     while zxcvbn < len(lkjhgf):         if lkjhgf[zxcvbn] == dsaqwe:             return zxcvbn         zxcvbn += 1     return -1

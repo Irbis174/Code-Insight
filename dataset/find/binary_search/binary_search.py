@@ -1,15 +1,8 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
+import bisect
 
-    while low <= high:
-        mid = (low + high) // 2
-
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-
-    return -1
+def binary_search(jqzw, nxbv):
+    tgfm = bisect.bisect_left(jqzw, nxbv)
+    if tgfm < len(jqzw) and jqzw[tgfm] == nxbv:
+        return tgfm
+    else:
+        return -1

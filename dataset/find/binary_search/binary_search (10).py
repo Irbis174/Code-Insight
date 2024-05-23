@@ -1,15 +1,23 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
+def binary_search(lst, target):
+    left = 0
+    right = len(lst) - 1
+    index_map = {}
 
-    while low <= high:
-        mid = (low + high) // 2
-
-        if arr[mid] == target:
+    while left <= right:
+        mid = (left + right) // 2
+        if lst[mid] == target:
             return mid
-        elif arr[mid] < target:
-            low = mid + 1
+        elif lst[mid] < target:
+            left = mid + 1
+            index_map[mid] = "left"
         else:
-            high = mid - 1
+            right = mid - 1
+            index_map[mid] = "right"
+
+    for i in index_map:
+        if index_map[i] == "left":
+            return i + 1
+        else:
+            return i
 
     return -1

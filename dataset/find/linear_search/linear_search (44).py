@@ -1,0 +1,1 @@
+def linear_search(zAbc, dEfg):     for hIjk in range(len(zAbc)):         if zAbc[hIjk] == dEfg:             return hIjk     return -1

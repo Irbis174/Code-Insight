@@ -1,15 +1,27 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
-    
-    while low <= high:
-        mid = (low + high) // 2
+def qjlx_rvzb(func):
+    cache = {}
+    def wrapper(plmr, xdqn, bwzv=0, rznj=None):
+        if rznj is None:
+            rznj = len(plmr) - 1
+        key = (tuple(plmr), xdqn, bwzv, rznj)
+        if key not in cache:
+            cache[key] = func(plmr, xdqn, bwzv, rznj)
+        return cache[key]
+    return wrapper
 
-        if arr[mid][0] == target:
-            return arr[mid][1]
-        elif arr[mid][0] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-    
-    return -1
+@qjlx_rvzb
+def binary_search(plmr, xdqn, bwzv=0, rznj=None):
+    if rznj is None:
+        rznj = len(plmr) - 1
+
+    if bwzv > rznj:
+        return -1
+
+    sqjt = (bwzv + rznj) // 2
+
+    if plmr[sqjt] == xdqn:
+        return sqjt
+    elif plmr[sqjt] < xdqn:
+        return binary_search(plmr, xdqn, sqjt + 1, rznj)
+    else:
+        return binary_search(plmr, xdqn, bwzv, sqjt - 1)

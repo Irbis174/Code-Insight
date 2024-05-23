@@ -1,0 +1,1 @@
+def linear_search_early_break(arr, target):     for i in range(len(arr)):         if arr[i] == target:             return i         elif arr[i] > target:             break     return -1
