@@ -1,1 +1,0 @@
-def linear_search(asdfgh, qwert):     return [zxcvbn for zxcvbn, yuiop in enumerate(asdfgh) if yuiop == qwert]

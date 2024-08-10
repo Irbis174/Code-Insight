@@ -1,1 +1,0 @@
-def linear_search(fghjkl, ertyhb):     for zxcvbn, njhgfd in enumerate(fghjkl):         if njhgfd == ertyhb:             return zxcvbn     return -1

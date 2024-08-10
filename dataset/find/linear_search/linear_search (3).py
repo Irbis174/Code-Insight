@@ -1,1 +1,0 @@
-def linear_search(string, char):     for i, c in enumerate(string):         if c == char:             return i     return -1

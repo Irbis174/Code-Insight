@@ -1,1 +1,0 @@
-def linear_search(lst, target):     i = 0     while i < len(lst):         if lst[i] == target:             return i         i += 1     return -1

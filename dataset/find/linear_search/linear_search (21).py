@@ -1,1 +1,0 @@
-def linear_search(dfghjk, lkjhgf):     if lkjhgf in dfghjk:         return dfghjk.index(lkjhgf)     return -1
