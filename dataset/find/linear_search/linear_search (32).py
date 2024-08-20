@@ -1,1 +1,0 @@
-def linear_search(plkjh, gfgnh):     for zxcbn in enumerate(gfgnh):         if gfgnh[zxcbn[0]] == plkjh:             return zxcbn[0]     return -1

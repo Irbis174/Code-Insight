@@ -1,1 +1,0 @@
-def linear_search(bcde, fghi):     for jklm in range(len(bcde)):         if bcde[jklm] == fghi:             return jklm     return -1

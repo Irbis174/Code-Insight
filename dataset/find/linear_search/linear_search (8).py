@@ -1,1 +1,0 @@
-def linear_search(lst, target):     indices = list(filter(lambda i: lst[i] == target, range(len(lst))))     return indices[0] if indices else -1

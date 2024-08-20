@@ -1,1 +1,0 @@
-def linear_search(jkfds, aowir):     for zcxqw in range(len(aowir)):         if aowir[zcxqw] == jkfds:             return zcxqw     return -1

@@ -1,1 +1,0 @@
-def linear_search(ujmkol, ioplkj):     zxcvbn = 0     while zxcvbn < len(ujmkol):         if ujmkol[zxcvbn] == ioplkj:             return zxcvbn         zxcvbn += 1     return -1

@@ -1,1 +1,0 @@
-def linear_search(qdvbx, cxnlk):     for mzpqr in range(len(cxnlk)):         if cxnlk[mzpqr] == qdvbx:             return mzpqr     return -1

@@ -1,1 +1,0 @@
-def linear_search(lkjhgf, dsaqwe):     return [zxcvbn for zxcvbn, qwerty in enumerate(lkjhgf) if qwerty == dsaqwe]

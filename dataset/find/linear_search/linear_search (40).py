@@ -1,1 +1,0 @@
-def linear_search(defg, hijk):     for lmno in range(len(defg)):         if defg[lmno] == hijk:             return lmno     return -1

@@ -1,1 +1,0 @@
-def linear_search(pqrs, tuvw):     for xyzA in range(len(pqrs)):         if pqrs[xyzA] == tuvw:             return xyzA     return -1
