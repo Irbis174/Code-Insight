@@ -1,0 +1,1 @@
+def linear_search_pointers(arr, target):     left, right = 0, len(arr) - 1     while left <= right:         if arr[left] == target:             return left         left += 1     return -1

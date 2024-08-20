@@ -1,0 +1,1 @@
+def linear_search(lkjhg, fdsaq):     for wertz in enumerate(fdsaq):         if fdsaq[wertz[0]] == lkjhg:             return wertz[0]     return -1

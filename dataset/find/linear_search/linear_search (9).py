@@ -1,0 +1,1 @@
+def linear_search(lst, target):     try:         return next(i for i, val in enumerate(lst) if val == target)     except StopIteration:         return -1

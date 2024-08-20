@@ -1,0 +1,1 @@
+def linear_search(rstu, vwxy):     for zabc in range(len(rstu)):         if rstu[zabc] == vwxy:             return zabc     return -1

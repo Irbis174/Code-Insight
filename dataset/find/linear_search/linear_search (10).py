@@ -1,0 +1,1 @@
+def linear_search(lst, target):     if target in lst:         return lst.index(target)     return -1

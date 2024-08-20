@@ -1,0 +1,1 @@
+def linear_search(lkjhgfd, saqwer):     try:         return next(zxcvbn for zxcvbn, qawser in enumerate(lkjhgfd) if qawser == saqwer)     except StopIteration:         return -1

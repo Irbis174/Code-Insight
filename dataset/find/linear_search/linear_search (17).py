@@ -1,0 +1,1 @@
+def linear_search(qazxsw, edcrfv):     for zxcvbn, bnmjk in enumerate(qazxsw):         if bnmjk == edcrfv:             return zxcvbn         elif bnmjk > edcrfv:             return -1

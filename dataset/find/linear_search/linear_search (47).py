@@ -1,0 +1,1 @@
+def linear_search_transpose(arr, target):     for i in range(len(arr)):         if arr[i] == target:             arr[i], arr[0] = arr[0], arr[i]             return 0     return -1

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="43f487fd-f1c6-40e2-81dc-91c812e13367" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/node (1).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/node (2).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/node.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ (2).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ (3).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ (4).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ (5).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ (6).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ (7).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/node/Новый текстовый документ.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/sort/bubble_sort/bubble_sort (101).py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/make_dataset.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parsing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/parsing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_models.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_models.ipynb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2dBKJ8CNvnjKpzjCuhPEdl2HnLZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43f487fd-f1c6-40e2-81dc-91c812e13367" name="Changes" comment="" />
+      <created>1709475957273</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709475957273</updated>
+    </task>
+    <servers />
+  </component>
+</project>
